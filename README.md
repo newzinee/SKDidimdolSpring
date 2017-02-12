@@ -1,1 +1,1 @@
-# gitSkdidimdol
+﻿SK 고용 디딤돌 3기 개인 Spring Project - BookList 
