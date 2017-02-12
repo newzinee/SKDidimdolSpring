@@ -1,0 +1,1 @@
+<%response.sendRedirect("getBookList.do");%>
