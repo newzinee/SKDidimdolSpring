@@ -25,8 +25,8 @@
 	<div id="title" class="container">
 		<h1>내가 읽은 책 목록</h1>
 	</div>
-	<div class="insert container col-md-offset-10 col-md-1">
-		<a href="insertBookForm.do">등록</a>
+	<div class="insert container col-md-offset-10 col-md-2" style="margin-bottom:10px;">
+		<a href="insertBookForm.do" class="btn btn-info">등록</a>
 	</div>
 	<div class="container">
 		<table class="table">
