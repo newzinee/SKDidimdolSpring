@@ -17,12 +17,12 @@
 				<tr>
 					<td>제목</td>
 					<td><input type="text" name="title" placeholder="책 제목"
-						size="35"></td>
+						size="35" required></td>
 				</tr>
 				<tr>
 					<td>지은이</td>
 					<td><input type="text" name="author" placeholder="지은이"
-						size="35"></td>
+						size="35" required></td>
 				</tr>
 				<tr>
 					<td>요약</td>

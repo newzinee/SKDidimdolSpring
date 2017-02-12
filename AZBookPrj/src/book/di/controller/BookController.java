@@ -1,5 +1,7 @@
 package book.di.controller;
 
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ public class BookController {
 	
 	@Autowired
 	BookDao dao;
+	Calendar cal;
 	
 	@RequestMapping("/getBookList.do")
 	public ModelAndView getBookList(Model model) {
@@ -34,8 +37,12 @@ public class BookController {
 	
 	@RequestMapping("/insertBook.do")
 	public String insertBook(@ModelAttribute BookVO book) {
-		if(book != null)
+		cal = Calendar.getInstance();
+		Date createTime = new Date(cal.getTimeInMillis());
+		if(book != null) {
+			book.setCreateTime(createTime);
 			dao.insert(book);
+		}
 		return "redirect:/getBookList.do";
 	}
 	

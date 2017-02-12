@@ -36,6 +36,7 @@
 				<th>지은이</th>
 				<th>한 줄 요약</th>
 				<th>쪽수</th>
+				<th>기록일</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -46,6 +47,7 @@
 					<td>${ book.author }</td>
 					<td>${ book.summary }</td>
 					<td>${ book.page }</td>
+					<td>${ book.createTime }</td>
 					<td><a href="updateBookForm.do?seq=${ book.seq }">수정</a></td>
 					<td><a href="deleteBook.do?seq=${ book.seq }">삭제</a></td>
 				</tr>
