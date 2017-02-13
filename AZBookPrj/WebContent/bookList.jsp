@@ -1,31 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>BookList</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style type="text/css">
-	.insert {
-		font-size: 20px;
-		margin-right: 50px;
-	}
+.insert {
+	font-size: 20px;
+	margin-right: 50px;
+}
 </style>
+<script type="text/javascript">
+	$(function() {
+		console.log('j');
+
+	});
+</script>
 </head>
 <body>
 	<div id="title" class="container">
 		<h1>내가 읽은 책 목록</h1>
 	</div>
-	<div class="insert container col-md-offset-10 col-md-2" style="margin-bottom:10px;">
+	<div class="insert container col-md-offset-10 col-md-2"
+		style="margin-bottom: 10px;">
 		<a href="insertBookForm.do" class="btn btn-info">등록</a>
 	</div>
 	<div class="container">
@@ -49,7 +60,7 @@
 					<td>${ book.page }</td>
 					<td>${ book.createTime }</td>
 					<td><a href="updateBookForm.do?seq=${ book.seq }">수정</a></td>
-					<td><a href="deleteBook.do?seq=${ book.seq }">삭제</a></td>
+					<td><a id='deleteBtn' href="">삭제</a></td>
 				</tr>
 			</c:forEach>
 		</table>

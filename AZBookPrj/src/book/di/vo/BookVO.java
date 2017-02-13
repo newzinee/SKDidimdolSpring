@@ -14,12 +14,10 @@ public class BookVO {
 	private Date createTime;
 	
 	public BookVO() {
-		System.out.println("기본생성자");
 	}
 		
 	public BookVO(String title, String author, String summary, int page) {
 		super();
-		System.out.println("title, author, summary, page 생성자");
 		this.title = title;
 		this.author = author;
 		this.summary = summary;

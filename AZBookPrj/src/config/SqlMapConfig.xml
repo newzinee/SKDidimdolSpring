@@ -3,6 +3,12 @@
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+	<!-- log4j2 설정 -->
+	<settings>
+		<setting name="defaultStatementTimeout" value="3" /> <!-- seconds -->
+		<setting name="logImpl" value="LOG4J2" />
+	</settings>
+
 	<typeAliases>
 		<typeAlias alias="Book" type="book.di.vo.BookVO" />
 	</typeAliases>

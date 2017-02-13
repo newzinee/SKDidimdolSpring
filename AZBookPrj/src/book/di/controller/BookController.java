@@ -31,7 +31,7 @@ public class BookController {
 	
 	@RequestMapping("/insertBookForm.do")
 	public ModelAndView insertBookForm() {
-		
+
 		return new ModelAndView("insertBook.jsp");
 	}
 	
