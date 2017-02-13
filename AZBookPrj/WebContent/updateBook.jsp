@@ -45,7 +45,7 @@
 				</tr>
 				<tr>
 					<td>쪽 수</td>
-					<td><input type="number" name="page" placeholder="쪽 수" size="35" value="${ book.page }" class="form-control"></td>
+					<td><input type="number" name="page" placeholder="쪽 수" size="35" value="${ book.page }" class="form-control" required></td>
 				</tr>
 				<tr>
 					<td><input type="submit" value="등록" class="btn btn-success"></td>

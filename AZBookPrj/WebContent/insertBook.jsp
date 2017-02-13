@@ -53,7 +53,7 @@
 				</tr>
 				<tr>
 					<td>쪽 수</td>
-					<td><input type="number" name="page" placeholder="쪽 수" size="35" class="form-control"></td>
+					<td><input type="number" name="page" placeholder="쪽 수" size="35" class="form-control" required></td>
 				</tr>
 				<tr>
 					<td colspan=2 class="lasttd">

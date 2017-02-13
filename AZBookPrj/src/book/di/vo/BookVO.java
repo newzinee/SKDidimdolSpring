@@ -4,7 +4,7 @@ import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
-@Component("book")
+//@Component("book")
 public class BookVO {
 	private int seq;
 	private String title;
@@ -101,7 +101,12 @@ public class BookVO {
 
 
 	public void setSummary(String summary) {
-		this.summary = summary;
+		if(summary != null){
+			this.summary = summary;
+		}else {
+			this.summary = "";
+		}
+		
 	}
 
 

@@ -23,20 +23,30 @@
 	font-size: 20px;
 	margin-right: 50px;
 }
+.inline {
+	display: inline;
+	margin-bottom: 10px;
+}
 </style>
 <script type="text/javascript">
 	$(function() {
-		console.log('j');
 
 	});
+	function delConfirm(seq) {
+		alert('click' + seq);
+		var result = confirm('삭제하시겠습니까?');
+		if(result) {
+			document.location.href="deleteBook.do?seq="+seq;
+		}
+	}
 </script>
 </head>
 <body>
 	<div id="title" class="container">
 		<h1>내가 읽은 책 목록</h1>
 	</div>
-	<div class="insert container col-md-offset-10 col-md-2"
-		style="margin-bottom: 10px;">
+
+	<div class="insert container col-md-offset-10 col-md-2">
 		<a href="insertBookForm.do" class="btn btn-info">등록</a>
 	</div>
 	<div class="container">
@@ -60,7 +70,8 @@
 					<td>${ book.page }</td>
 					<td>${ book.createTime }</td>
 					<td><a href="updateBookForm.do?seq=${ book.seq }">수정</a></td>
-					<td><a id='deleteBtn' href="">삭제</a></td>
+<%-- 					<td><a href="" id='deleteBtn' onclick='if(confirm("삭제하시겠습니까?")) location.href="deleteBook.do?seq=${ book.seq }"'>삭제</a></td> --%>
+					<td><a id='deleteBtn' onclick="delConfirm(${book.seq})">삭제</a></td>
 				</tr>
 			</c:forEach>
 		</table>

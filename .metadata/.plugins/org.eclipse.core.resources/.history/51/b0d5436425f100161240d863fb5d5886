@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bookNS">
+
+
+	<select id="selectBookByseq" parameterType="Integer" resultType="Book">
+		SELECT * FROM books WHERE seq=#{value}
+	</select>
+
+	<select id="selectBooks" resultType="Book">
+		SELECT * FROM books ORDER BY seq
+	</select>
+
+	<insert id="insertBook" parameterType="Book">
+		<selectKey resultType="integer" keyProperty="seq" order="BEFORE">
+			SELECT book_seq.nextval from dual
+		</selectKey>
+		INSERT INTO books VALUES (#{seq}, #{title}, #{author}, #{summary},#{page})
+	</insert>
+
+	<update id="updateBookTitleByseq" parameterType="Book">
+		UPDATE books
+		SET title=#{title}
+		WHERE seq=#{seq}
+	</update>
+
+	<update id="updateBookByseq" parameterType="Book">
+		UPDATE books
+		SET title=#{title},
+		author=#{author},
+		summary=#{summary},
+		page=#{page}
+		WHERE seq=#{seq}
+	</update>
+
+	<delete id="deleteBookByseq" parameterType="Integer">
+		DELETE FROM books
+		WHERE seq=#{seq}
+	</delete>
+</mapper>
+	
